@@ -9,6 +9,7 @@ class ShopStore {
   }
   shops = [];
   isLoading = true; 
+  
   fetchShops = async () => {
     try {
       const res = await api.get("/shops");
