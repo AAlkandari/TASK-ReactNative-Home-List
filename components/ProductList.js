@@ -4,18 +4,17 @@ import ProductItem from './ProductItem';
 import { observer } from 'mobx-react';
 import { Container } from 'native-base';
 
-const ProductList = ({ products }) => {
+const ProductList = ({products, navigation}) => {
+console.log("🚀 ~ file: ProductList.js ~ line 8 ~ ProductList ~ navigation", navigation)
 
 const productList = products.map((product) => 
-      <ProductItem product={product} key={product._id} />);
+      <ProductItem product={product} key={product._id} navigation={navigation}/>);
 
   return (
-    
     <View >
       <Text style={styles.text}>ProductList</Text>
       <Container>{productList}</Container>
     </View>
-   
   )
 }
 

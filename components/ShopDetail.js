@@ -5,7 +5,7 @@ import shopStore from "../stores/shopStore";
 import ProductList from "./ProductList";
 import { Spinner } from "native-base";
 
-const ShopDetail = ({route}) => {
+const ShopDetail = ({route, navigation}) => {
   if (shopStore.isLoading ) return  <Spinner/>
   const image = { uri: "https://cdn.99images.com/photos/wallpapers/tv-shows/rick-and-mortyandroid-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-ipem1.png" };
 
@@ -15,7 +15,7 @@ const ShopDetail = ({route}) => {
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
     <View style={styles.container}>
       <Image source={{ uri:shop.image }} style={{ height: 150, width:150}}/>
-      <ProductList products={shop.products} />
+      <ProductList products={shop.products} navigation={navigation} />
     </View>
     </ImageBackground>
   );
