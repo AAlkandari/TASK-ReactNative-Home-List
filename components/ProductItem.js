@@ -3,7 +3,6 @@ import React from 'react'
 import { VStack } from 'native-base'
 
 const ProductItem = ({product, navigation}) => {
-console.log("🚀 ~ file: ProductItem.js ~ line 6 ~ ProductItem ~ navigation", navigation)
   return (
     <Pressable onPress={() => navigation.navigate("ProductDetail", {product:product})}>
     <View>
